@@ -3,7 +3,7 @@ package com.bwardweb.tdd.collatz.processors;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class InputProcessor {
+public class DequeProcessor {
 	public Deque<String> convertStringToDeque(String input){
 		Deque<String> processedInput = new ArrayDeque<String>();
 		if(input !=null && input.length() > 0){
@@ -21,5 +21,13 @@ public class InputProcessor {
 			}
 		}
 		return currentDeque;
+	}
+	
+	public String convertDequeToString(Deque<String> currentDeque){
+		String dequeAsString = "";
+		for(String element:currentDeque){
+			dequeAsString += element;
+		}
+		return dequeAsString;
 	}
 }

@@ -10,16 +10,16 @@ import org.junit.Test;
 import com.bwardweb.tdd.collatz.algorithms.CollatzTagAlgorithm;
 import com.bwardweb.tdd.collatz.converter.CharacterConverter;
 import com.bwardweb.tdd.collatz.converter.CollatzCharacterConverter;
-import com.bwardweb.tdd.collatz.processors.InputProcessor;
+import com.bwardweb.tdd.collatz.processors.DequeProcessor;
 
 public class CollatzTagAlgorithmTest {
 	private CollatzTagAlgorithm objectUnderTest;
-	private InputProcessor processor;
+	private DequeProcessor processor;
 	private CharacterConverter converter;
 	
 	@Before
 	public void setup(){
-		processor = new InputProcessor();
+		processor = new DequeProcessor();
 		converter = new CollatzCharacterConverter();
 		objectUnderTest = new CollatzTagAlgorithm(converter,processor);
 	}

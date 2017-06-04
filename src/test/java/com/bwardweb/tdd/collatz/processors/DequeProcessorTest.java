@@ -7,14 +7,14 @@ import java.util.Deque;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.bwardweb.tdd.collatz.processors.InputProcessor;
+import com.bwardweb.tdd.collatz.processors.DequeProcessor;
 
-public class InputProcessorTest {
-	InputProcessor objectUnderTest;
+public class DequeProcessorTest {
+	DequeProcessor objectUnderTest;
 	
 	@Before
 	public void setup(){
-		objectUnderTest = new InputProcessor();
+		objectUnderTest = new DequeProcessor();
 	}
 	
 	@Test
@@ -104,5 +104,26 @@ public class InputProcessorTest {
 			testOutput += element;
 		}
 		assertEquals(testInput + stringToAdd, testOutput);
+	}
+	
+	@Test
+	public void convertDequeToString_notNull(){
+		String testInput = "abc";
+		Deque<String> processedInput = objectUnderTest.convertStringToDeque(testInput);
+		assertNotNull(objectUnderTest.convertDequeToString(processedInput));
+	}
+	
+	@Test
+	public void convertDequeToString_notEmpty(){
+		String testInput = "abc";
+		Deque<String> processedInput = objectUnderTest.convertStringToDeque(testInput);
+		assertTrue(objectUnderTest.convertDequeToString(processedInput).length() > 0);
+	}
+	
+	@Test
+	public void convertDequeToString_equalsInput(){
+		String testInput = "abc";
+		Deque<String> processedInput = objectUnderTest.convertStringToDeque(testInput);
+		assertEquals(testInput,objectUnderTest.convertDequeToString(processedInput));
 	}
 }
